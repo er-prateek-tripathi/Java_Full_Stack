@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title></head>
+    <title></title>
+    <script>
+        function doSomething() {
+            alert("Whoa! Shit is freaking' Real.");
+            textbox1 = document.getElementById("unametxt");
+            data1 = textbox1.value;
+
+            textbox2 = document.getElementById("pwdtxt");
+            data2 = textbox2.value;
+
+            if(data1 ==="" && data2 ===""){
+                 alert("Username and Password cannot be empty.");
+                 return;
+            }
+
+            else if(data2 === ""){
+                alert("Password cannot be empty.");
+                return;
+            }
+            alert("Welcome " + data1);
+        }
+    </script>
+</head>
 <body>
     <h1>Starting with HTML</h1>
     <hr/>
@@ -9,13 +31,19 @@
     <tr>
         <td> UserName </td>
         <td>
-            <input type = "text" id = "unametxt" >
+            <input type = "text" id = "unametxt" />
+        </td>
+    </tr>
+    <tr>
+        <td> PassWord </td>
+        <td>
+            <input type = "text" id = "pwdtxt" />
         </td>
     </tr>
 
     <tr>
         <td colspan="2" align = "right">
-            <input type="button" value = "Click Me">
+            <input type="button" value = "Click Me" onclick="doSomething()"/>
         </td>
     </tr>
 </table>
