@@ -5,11 +5,11 @@
     <script>
         function doSomething() {
             alert("Whoa! Shit is freaking' Real.");
-            textbox1 = document.getElementById("unametxt");
-            data1 = textbox1.value;
+            let textbox1 = document.getElementById("unametxt");
+            let data1 = textbox1.value;
 
-            textbox2 = document.getElementById("pwdtxt");
-            data2 = textbox2.value;
+            let textbox2 = document.getElementById("pwdtxt");
+            let data2 = textbox2.value;
 
             alert("Welcome " + data1);
 
@@ -31,6 +31,7 @@
             let rButtons = document.getElementsByName("rb");
 
             let selectedButton;
+            let skills = "Skills you have: ";
 
             for (let i = 0; i < rButtons.length; i++) {
                 if(rButtons[i].checked) {
@@ -39,7 +40,21 @@
                 }
             }
 
-            textbox1.value = "Hello " + data1 + " you are " + selectedButton;
+            let cboxes = document.getElementsByName("skills");
+
+            for(let i = 0; i<cboxes.length; i++){
+                if(cboxes[i].checked) {
+                    skills += cboxes[i].value;
+                }
+            }
+
+
+            // textbox1.value = "Hello " + data1 + " you are " + selectedButton;
+
+            let selectedOption = document.getElementById("qbox").value;
+            alert("Welcome " + data1 + " of Gender " + selectedButton + " with highest Qualification of " + selectedOption + " and " + skills)
+
+
 
 
         }
@@ -60,6 +75,28 @@
         <td>
             <input type = "radio" name="rb" value="Male" /> Male
             <input type = "radio" name="rb" value="Female" /> Female
+        </td>
+    </tr>
+    <tr>
+        <td> Select Qualification </td>
+        <td>
+            <select id="qbox">
+                <option value = "none"> Select </option>
+                <option value = "B. Tech"> B. Tech </option>
+                <option value = "M. Tech"> M. Tech </option>
+                <option value = "BCA"> BCA </option>
+                <option value = "MCA"> MCA </option>
+
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td> Select Your Skills </td>
+        <td>
+            <input type="checkbox" name="skills" value="Programming"/> Programming
+            <input type="checkbox" name="skills" value="Testing"/> Testing
+            <input type="checkbox" name="skills" value="Designing"/> Designing
+
         </td>
     </tr>
     <tr>
