@@ -11,6 +11,8 @@
             textbox2 = document.getElementById("pwdtxt");
             data2 = textbox2.value;
 
+            alert("Welcome " + data1);
+
             if(data1 ==="" && data2 ===""){
                  alert("Username and Password cannot be empty.");
                  return;
@@ -20,7 +22,26 @@
                 alert("Password cannot be empty.");
                 return;
             }
-            alert("Welcome " + data1);
+
+            else {
+                alert("Username: " + data1 + "\n" + "Password: " + data2);
+
+            }
+
+            let rButtons = document.getElementsByName("rb");
+
+            let selectedButton;
+
+            for (let i = 0; i < rButtons.length; i++) {
+                if(rButtons[i].checked) {
+                    selectedButton = rButtons[i].value;
+                    break;
+                }
+            }
+
+            textbox1.value = "Hello " + data1 + " you are " + selectedButton;
+
+
         }
     </script>
 </head>
@@ -32,6 +53,13 @@
         <td> UserName </td>
         <td>
             <input type = "text" id = "unametxt" />
+        </td>
+    </tr>
+    <tr>
+        <td> Gender </td>
+        <td>
+            <input type = "radio" name="rb" value="Male" /> Male
+            <input type = "radio" name="rb" value="Female" /> Female
         </td>
     </tr>
     <tr>
